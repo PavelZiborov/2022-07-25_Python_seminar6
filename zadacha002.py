@@ -20,44 +20,33 @@
 # Sample Output 2:
 # a1b1c1
 
-
 S = input("Введите текст: ")
 
-def Coding (text):
-    lists = [text[i] for i in range(len(text))]
-    
+def coding(text):
+    count = 1
+    A = ''
+    for i in range(0,len(text)-1):
+        if text[i] == text[i+1]:
+            count += 1
+        else:
+            A = A + str(count) + text[i]
+            count = 1
+    A = A + str(count) + text[-1]
+    return A
 
-    return lists
+def decoding(text):
+    number = ''
+    A = ''
+    for i in range(len(text)):
+        if not text[i].isalpha():
+            number += text[i]
+        else:
+            A = A + text[i] * int(number)
+            number = ''
+    return A
 
-
-# lists = [text[i] for i in range(len(text))]
-
-# S = input("Введите текст: ")
-
-# def coding(text):
-#     count = 1
-#     A = ''
-#     for i in range(len(text)-1):
-#         if text[i] == text[i+1]:
-#             count += 1
-#         else:
-#             A = A + str(count) + text[i]
-#             count = 1
-#     return A
-
-# def decoding(text):
-#     number = ''
-#     A = ''
-#     for i in range(len(text)):
-#         if not text[i].isalpha():
-#             number += text[i]
-#         else:
-#             A = A + text[i] * int(number)
-#             number = ''
-#     return A
-
-# print(f"Кодирование: {coding(S)}")
-# print(f"Декодирование: {decoding(coding(S))}")
+print(f"Кодирование: {coding(S)}")
+print(f"Декодирование: {decoding(coding(S))}")
 
 
 

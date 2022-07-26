@@ -23,8 +23,9 @@ text = '11+2*3'
 
 
 def Calc(text):
-    listOfDigits = re.split('\+|\-|\/|\*', text)
-    return listOfDigits
+    listOfDigits = [int(i) for i in re.split('\+|\-|\/|\*', text)]
+    listOfOperators = [i for i in text if i == '+' or i == '-' or i == '*' or i == '/']
+    return listOfDigits, listOfOperators
 
 
 print(Calc(text))
