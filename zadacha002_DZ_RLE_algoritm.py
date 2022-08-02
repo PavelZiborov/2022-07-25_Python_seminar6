@@ -47,21 +47,3 @@ def decoding(text):
 
 print(f"Кодирование: {coding(S)}")
 print(f"Декодирование: {decoding(coding(S))}")
-
-
-
-# def Coding(code):
-#     ls_decoding = ''
-#     previous = code[0]
-#     for i in code:
-#         count = 1
-#         if i == previous:
-#             count += 1
-#         ls_decoding.append(f'{i}{count}')
-#         previous = i
-#     print(ls_decoding)
-
-
-# Coding(code)
-
-# ls_decoding = ls_decoding+f'{i}{count}'
